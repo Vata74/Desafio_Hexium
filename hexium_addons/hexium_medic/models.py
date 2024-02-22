@@ -10,7 +10,7 @@ class Pacientes(models.Model):
         ('le', 'LE'),
         ('ci', 'CI'),
         ('ce', 'CE'),
-        ('pas', 'Pas')
+        ('pas', 'Pas'),
         ('otro', 'Otro')
     ], string="Tipo de Documento")
     numero_documento = fields.Char("Número de Documento")

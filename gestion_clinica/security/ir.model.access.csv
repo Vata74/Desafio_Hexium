@@ -1,0 +1,5 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_paciente,access.paciente,model_clinica_paciente,,1,1,1,1
+access_acompanante,access.acompanante,model_clinica_acompanante,,1,1,1,1
+access_diagnostico,access.diagnostico,model_clinica_diagnostico,,1,1,1,1
+access_medico,access.medico,model_clinica_medico,,1,1,1,1

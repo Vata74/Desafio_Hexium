@@ -1,0 +1,29 @@
+<odoo>
+        <!-- Vista para el formulario de Médico -->
+        <record id="view_medico_form" model="ir.ui.view">
+            <field name="name">Médico Form</field>
+            <field name="model">clinica.medico</field>
+            <field name="arch" type="xml">
+                <form string="Médico">
+                    <sheet>
+                        <group>
+                            <field name="name"/>
+                            <field name="matricula"/>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <!-- Vista para la lista de Médicos -->
+        <record id="view_medico_tree" model="ir.ui.view">
+            <field name="name">Médico Tree</field>
+            <field name="model">clinica.medico</field>
+            <field name="arch" type="xml">
+                <tree string="Médicos">
+                    <field name="name"/>
+                    <field name="matricula"/>
+                </tree>
+            </field>
+        </record>
+</odoo>

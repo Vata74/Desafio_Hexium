@@ -1,0 +1,34 @@
+<odoo>
+        <!-- Vista para el formulario de Acompañante -->
+        <record id="view_acompanante_form" model="ir.ui.view">
+            <field name="name">Acompañante Form</field>
+            <field name="model">clinica.acompanante</field>
+            <field name="arch" type="xml">
+                <form string="Acompañante">
+                    <sheet>
+                        <group>
+                            <field name="name"/>
+                            <field name="apellido"/>
+                            <field name="parentesco"/>
+                            <field name="telefono_contacto"/>
+                            <field name="paciente_id"/>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <!-- Vista para la lista de Acompañantes -->
+        <record id="view_acompanante_tree" model="ir.ui.view">
+            <field name="name">Acompañante Tree</field>
+            <field name="model">clinica.acompanante</field>
+            <field name="arch" type="xml">
+                <tree string="Acompañantes">
+                    <field name="name"/>
+                    <field name="apellido"/>
+                    <field name="parentesco"/>
+                    <field name="telefono_contacto"/>
+                </tree>
+            </field>
+        </record>
+</odoo>

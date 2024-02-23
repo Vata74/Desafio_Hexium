@@ -1,0 +1,69 @@
+<odoo>
+
+ <record id="menu_action_pacientes" model="ir.actions.act_window">
+    <field name="name">Pacientes</field>
+    <field name="res_model">clinica.paciente</field>
+    <field name="view_mode">tree,form</field>
+    <field name="domain">[]</field>
+  </record>
+
+  <record id="menu_clinica" model="ir.ui.menu">
+    <field name="name">Clínica</field>
+    <field name="sequence" eval="10"/>
+    <field name="action" ref="menu_action_pacientes"/>
+  </record>
+
+  <record id="menu_pacientes" model="ir.ui.menu">
+    <field name="name">Pacientes</field>
+    <field name="parent_id" ref="menu_clinica"/>
+    <field name="action" ref="menu_action_pacientes"/>
+    <field name="sequence" eval="1"/>
+  </record>
+
+  <record id="menu_action_medico" model="ir.actions.act_window">
+    <field name="name">Médicos</field>
+    <field name="res_model">clinica.medico</field>
+    <field name="view_mode">tree,form</field>
+    <field name="domain">[]</field>
+  </record>
+
+  <record id="menu_medico" model="ir.ui.menu">
+    <field name="name">Médicos</field>
+    <field name="parent_id" ref="menu_clinica"/>
+    <field name="action" ref="menu_action_medico"/>
+    <field name="sequence" eval="1"/>
+  </record>
+
+  <record id="menu_action_diagnostico" model="ir.actions.act_window">
+    <field name="name">Diagnósticos</field>
+    <field name="res_model">clinica.diagnostico</field>
+    <field name="view_mode">tree,form</field>
+    <field name="domain">[]</field>
+</record>
+
+<record id="menu_diagnostico" model="ir.ui.menu">
+    <field name="name">Diagnósticos</field>
+    <field name="parent_id" ref="menu_clinica"/>
+    <field name="action" ref="menu_action_diagnostico"/>
+    <field name="sequence" eval="20"/>
+</record>
+
+
+
+<record id="menu_action_acompanante" model="ir.actions.act_window">
+    <field name="name">Acompañantes</field>
+    <field name="res_model">clinica.acompanante</field>
+    <field name="view_mode">tree,form</field>
+    <field name="domain">[]</field>
+</record>
+
+<record id="menu_acompanante" model="ir.ui.menu">
+    <field name="name">Acompañantes</field>
+    <field name="parent_id" ref="menu_clinica"/>
+    <field name="action" ref="menu_action_acompanante"/>
+    <field name="sequence" eval="30"/>
+</record>
+
+
+
+</odoo>

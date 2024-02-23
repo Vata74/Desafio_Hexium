@@ -1,0 +1,33 @@
+<odoo>
+        <!-- Vista para el formulario de Diagnóstico -->
+        <record id="view_diagnostico_form" model="ir.ui.view">
+            <field name="name">Diagnóstico Form</field>
+            <field name="model">clinica.diagnostico</field>
+            <field name="arch" type="xml">
+                <form string="Diagnóstico">
+                    <sheet>
+                        <group>
+                            <field name="nombre_diagnostico"/>
+                            <field name="fecha_diagnostico"/>
+                            <field name="medico_id"/>
+                            <field name="paciente_id"/>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <!-- Vista para la lista de Diagnósticos -->
+        <record id="view_diagnostico_tree" model="ir.ui.view">
+            <field name="name">Diagnóstico Tree</field>
+            <field name="model">clinica.diagnostico</field>
+            <field name="arch" type="xml">
+                <tree string="Diagnósticos">
+                    <field name="nombre_diagnostico"/>
+                    <field name="fecha_diagnostico"/>
+                    <field name="medico_id"/>
+                    <field name="paciente_id"/>
+                </tree>
+            </field>
+        </record>
+</odoo>

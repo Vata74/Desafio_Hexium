@@ -1,16 +1,9 @@
 <odoo>
 
- <record id="menu_action_pacientes" model="ir.actions.act_window">
+  <record id="menu_action_pacientes" model="ir.actions.act_window">
     <field name="name">Pacientes</field>
     <field name="res_model">clinica.paciente</field>
     <field name="view_mode">tree,form</field>
-    <field name="domain">[]</field>
-  </record>
-
-  <record id="menu_clinica" model="ir.ui.menu">
-    <field name="name">Clínica</field>
-    <field name="sequence" eval="10"/>
-    <field name="action" ref="menu_action_pacientes"/>
   </record>
 
   <record id="menu_pacientes" model="ir.ui.menu">
@@ -19,6 +12,36 @@
     <field name="action" ref="menu_action_pacientes"/>
     <field name="sequence" eval="1"/>
   </record>
+
+  <menuitem id="menuitem_pacientes" name="Pacientes" parent="menu_clinica" sequence="10"/>
+
+  <!-- Menú desplegable con las funciones -->
+  <menuitem id="menu_sub_pacientes" name="Funciones Pacientes" parent="menu_pacientes"/>
+
+  <record id="menu_clinica" model="ir.ui.menu">
+    <field name="name">Clínica</field>
+    <field name="sequence" eval="10"/>
+    <field name="action" ref="menu_action_pacientes"/>
+  </record>
+
+
+  <!-- Define las acciones -->
+  <record id="action_buscar_pacientes_por_diagnostico" model="ir.actions.server">
+      <field name="name">Buscar Pacientes por Diagnóstico</field>
+      <field name="model_id" ref="model_clinica_paciente"/>
+      <field name="state">code</field>
+      <field name="code">Paciente.buscar_pacientes_por_diagnostico()</field>
+  </record>
+
+  <record id="action_asociar_diagnostico_a_paciente" model="ir.actions.server">
+      <field name="name">Asociar Diagnóstico a Paciente</field>
+      <field name="model_id" ref="model_clinica_paciente"/>
+      <field name="state">code</field>
+      <field name="code">model.asociar_diagnostico_a_paciente()</field>
+  </record>
+
+  <menuitem id="menu_action_buscar_pacientes_por_diagnostico" name="Buscar Pacientes por Diagnóstico" parent="menu_sub_pacientes" action="action_buscar_pacientes_por_diagnostico"/>
+  <menuitem id="menu_action_asociar_diagnostico_a_paciente" name="Asociar Diagnóstico a Paciente" parent="menu_sub_pacientes" action="action_asociar_diagnostico_a_paciente"/>
 
   <record id="menu_action_medico" model="ir.actions.act_window">
     <field name="name">Médicos</field>
@@ -48,8 +71,6 @@
     <field name="sequence" eval="20"/>
 </record>
 
-
-
 <record id="menu_action_acompanante" model="ir.actions.act_window">
     <field name="name">Acompañantes</field>
     <field name="res_model">clinica.acompanante</field>
@@ -63,7 +84,6 @@
     <field name="action" ref="menu_action_acompanante"/>
     <field name="sequence" eval="30"/>
 </record>
-
 
 
 </odoo>

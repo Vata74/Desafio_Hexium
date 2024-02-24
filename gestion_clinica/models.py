@@ -18,6 +18,7 @@ class Paciente(models.Model):
     codigo_postal = fields.Char(string='Código Postal', required=True)
     telefono = fields.Char(string='Teléfono', required=True)
 
+
     # Relación uno a muchos con acompañantes
     acompanantes_ids = fields.One2many('clinica.acompanante', 'paciente_id', string='Acompañantes')
 
@@ -52,7 +53,7 @@ class Acompanante(models.Model):
     # Definir los campos para la gestión de acompañantes
     name = fields.Char(string='Nombre', required=True)
     apellido = fields.Char(string='Apellido', required=True)
-    parentesco = fields.Char(string='Parentesco')
+    parentesco = fields.Selection([('madre', 'Madre'), ('padre', 'Padre'), ('hijo', 'Hijo'), ('otro', 'Otro')], string='Parentesco', required=True)
     telefono_contacto = fields.Char(string='Teléfono de Contacto')
     paciente_id = fields.Many2one('clinica.paciente', string='Paciente')
 
@@ -61,7 +62,7 @@ class Diagnostico(models.Model):
     _description = 'Modelo para gestionar diagnósticos médicos'
 
     # Definir los campos para la gestión de diagnósticos
-    nombre_diagnostico = fields.Char(string='Diagnóstico', required=True)
+    name = fields.Char(string='Diagnóstico', required=True)
     fecha_diagnostico = fields.Date(string='Fecha del Diagnóstico')
     medico_id = fields.Many2one('clinica.medico', string='Médico')
     paciente_id = fields.Many2one('clinica.paciente', string='Paciente')

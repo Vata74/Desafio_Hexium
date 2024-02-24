@@ -17,11 +17,14 @@
                             <field name="ciudad"/>
                             <field name="codigo_postal"/>
                             <field name="telefono"/>
+                            <field name="acompanantes_ids"/>
+                            <field name="diagnosticos_ids"/>
                         </group>
                     </sheet>
                 </form>
             </field>
         </record>
+
 
         <!-- Vista para la lista de Pacientes -->
         <record id="view_paciente_tree" model="ir.ui.view">
@@ -31,6 +34,13 @@
                 <tree string="Pacientes">
                     <field name="name"/>
                     <field name="apellido"/>
+                    <field name="tipo_documento"/>
+                    <field name="numero_documento"/>
+                    <field name="fecha_nacimiento"/>
+                    <field name="genero"/>
+                    <field name="direccion"/>
+                    <field name="ciudad"/>
+                    <field name="codigo_postal"/>
                     <field name="telefono"/>
                 </tree>
             </field>

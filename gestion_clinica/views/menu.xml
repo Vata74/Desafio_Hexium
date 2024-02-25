@@ -6,12 +6,21 @@
     <field name="view_mode">tree,form</field>
   </record>
 
+  <record id="menu_clinica" model="ir.ui.menu">
+    <field name="name">Clínica</field>
+    <field name="sequence" eval="10"/>
+    <field name="action" ref="menu_action_pacientes"/>
+  </record>
+
   <record id="menu_pacientes" model="ir.ui.menu">
-    <field name="name">Pacientes</field>
+    <field name="name">Funciones</field>
     <field name="parent_id" ref="menu_clinica"/>
     <field name="action" ref="menu_action_pacientes"/>
     <field name="sequence" eval="1"/>
   </record>
+
+        <!-- Define la acción asociada al menú -->
+
 
   <menuitem id="menuitem_pacientes" name="Pacientes" parent="menu_clinica" sequence="10"/>
 
@@ -26,24 +35,25 @@
 
 
   <!-- Define las acciones -->
-  <record id="action_buscar_pacientes_por_diagnostico" model="ir.actions.server">
-      <field name="name">Buscar Pacientes por Diagnóstico</field>
-      <field name="model_id" ref="model_clinica_paciente"/>
-      <field name="state">code</field>
-      <field name="code">Paciente.buscar_pacientes_por_diagnostico()</field>
+
+  <record id="ver_diagnosticos_pacientes" model="ir.actions.act_window">
+    <field name="name">Diagnósticos</field>
+    <field name="res_model">clinica.d_nomenclado</field>
+    <field name="view_mode">tree,form</field>
+    <field name="domain">[]</field>
   </record>
 
-  <record id="action_asociar_diagnostico_a_paciente" model="ir.actions.server">
-      <field name="name">Asociar Diagnóstico a Paciente</field>
-      <field name="model_id" ref="model_clinica_paciente"/>
-      <field name="state">code</field>
-      <field name="code">model.asociar_diagnostico_a_paciente()</field>
-  </record>
+  <menuitem id="menu_action_buscar_pacientes_por_diagnostico" name="Buscar Pacientes por Diagnóstico" parent="menu_sub_pacientes" action="ver_diagnosticos_pacientes"/>
 
-  <menuitem id="menu_action_buscar_pacientes_por_diagnostico" name="Buscar Pacientes por Diagnóstico" parent="menu_sub_pacientes" action="action_buscar_pacientes_por_diagnostico"/>
-  <menuitem id="menu_action_asociar_diagnostico_a_paciente" name="Asociar Diagnóstico a Paciente" parent="menu_sub_pacientes" action="action_asociar_diagnostico_a_paciente"/>
 
-  <record id="menu_action_medico" model="ir.actions.act_window">
+
+
+
+  <menuitem id="menu_asociar_diagnostico_a_paciente" name="asociar" parent="menu_sub_pacientes" action="action_asociar_diagnostico_a_paciente"/>
+
+  <!-- Comprobación médico -->
+
+  <!-- <record id="menu_action_medico" model="ir.actions.act_window">
     <field name="name">Médicos</field>
     <field name="res_model">clinica.medico</field>
     <field name="view_mode">tree,form</field>
@@ -55,35 +65,55 @@
     <field name="parent_id" ref="menu_clinica"/>
     <field name="action" ref="menu_action_medico"/>
     <field name="sequence" eval="1"/>
-  </record>
+  </record> -->
 
-  <record id="menu_action_diagnostico" model="ir.actions.act_window">
+  <!-- Comprobación diagnóstico -->
+
+  <!-- <record id="menu_action_diagnostico" model="ir.actions.act_window">
     <field name="name">Diagnósticos</field>
     <field name="res_model">clinica.diagnostico</field>
     <field name="view_mode">tree,form</field>
     <field name="domain">[]</field>
-</record>
+  </record>
 
-<record id="menu_diagnostico" model="ir.ui.menu">
+  <record id="menu_diagnostico" model="ir.ui.menu">
     <field name="name">Diagnósticos</field>
     <field name="parent_id" ref="menu_clinica"/>
     <field name="action" ref="menu_action_diagnostico"/>
     <field name="sequence" eval="20"/>
-</record>
+  </record> -->
 
-<record id="menu_action_acompanante" model="ir.actions.act_window">
-    <field name="name">Acompañantes</field>
-    <field name="res_model">clinica.acompanante</field>
-    <field name="view_mode">tree,form</field>
-    <field name="domain">[]</field>
-</record>
+  <!-- Comprobación diagnóstico nomenclado -->
 
-<record id="menu_acompanante" model="ir.ui.menu">
-    <field name="name">Acompañantes</field>
-    <field name="parent_id" ref="menu_clinica"/>
-    <field name="action" ref="menu_action_acompanante"/>
-    <field name="sequence" eval="30"/>
-</record>
+  <!-- <record id="menu_action_diagnostico_n" model="ir.actions.act_window">
+      <field name="name">Diagnósticos</field>
+      <field name="res_model">clinica.d_nomenclado</field>
+      <field name="view_mode">tree,form</field>
+      <field name="domain">[]</field>
+  </record>
+
+  <record id="menu_diagnostico_n" model="ir.ui.menu">
+      <field name="name">Diagnósticos nomenclados</field>
+      <field name="parent_id" ref="menu_clinica"/>
+      <field name="action" ref="menu_action_diagnostico_n"/>
+      <field name="sequence" eval="20"/>
+  </record> -->
+
+  <!-- Comprobación acompañante -->
+
+  <!-- <record id="menu_action_acompanante" model="ir.actions.act_window">
+      <field name="name">Acompañantes</field>
+      <field name="res_model">clinica.acompanante</field>
+      <field name="view_mode">tree,form</field>
+      <field name="domain">[]</field>
+  </record>
+
+  <record id="menu_acompanante" model="ir.ui.menu">
+      <field name="name">Acompañantes</field>
+      <field name="parent_id" ref="menu_clinica"/>
+      <field name="action" ref="menu_action_acompanante"/>
+      <field name="sequence" eval="30"/>
+  </record> -->
 
 
 </odoo>

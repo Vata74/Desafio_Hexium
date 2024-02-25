@@ -18,6 +18,8 @@
         'views/diagnostico_view.xml',
         'views/medico_view.xml',
         'views/menu.xml',
+        'data/clinica.d_nomenclado.csv',
+        'views/d_nomenclado_view.xml',
     ],
 
 

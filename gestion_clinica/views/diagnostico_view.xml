@@ -7,10 +7,9 @@
                 <form string="Diagnóstico">
                     <sheet>
                         <group>
-                            <field name="nombre_diagnostico"/>
+                            <field name="d_nomenclado_id"/>
                             <field name="fecha_diagnostico"/>
                             <field name="medico_id"/>
-                            <field name="paciente_id"/>
                         </group>
                     </sheet>
                 </form>
@@ -23,10 +22,9 @@
             <field name="model">clinica.diagnostico</field>
             <field name="arch" type="xml">
                 <tree string="Diagnósticos">
-                    <field name="nombre_diagnostico"/>
+                    <field name="d_nomenclado_id"/>
                     <field name="fecha_diagnostico"/>
                     <field name="medico_id"/>
-                    <field name="paciente_id"/>
                 </tree>
             </field>
         </record>

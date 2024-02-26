@@ -19,8 +19,6 @@
     <field name="sequence" eval="1"/>
   </record>
 
-  <menuitem id="menuitem_pacientes" name="Pacientes" parent="menu_clinica" sequence="10"/>
-
   <menuitem id="menu_sub_pacientes" name="Funciones Pacientes" parent="menu_pacientes"/>
 
   <record id="menu_clinica" model="ir.ui.menu">

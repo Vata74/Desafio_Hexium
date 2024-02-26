@@ -1,4 +1,3 @@
-# -*- coding: utf-8 -*-
 from odoo import models, fields, api
 
 class Paciente(models.Model):
@@ -22,7 +21,6 @@ class Paciente(models.Model):
 
     # Relación uno a muchos con diagnósticos médicos
     diagnosticos_ids = fields.One2many('clinica.diagnostico', 'paciente_id', string='Diagnósticos Médicos')
-
 
 
 class Acompanante(models.Model):
@@ -50,7 +48,7 @@ class DiagnosticoNomenclado(models.Model):
     _name = "clinica.d_nomenclado"
     _description = 'Modelo para gestionar nomenclaturas de diagnósticos'
 
-    
+    # Definir los campos para la gestión de nomenclaturas de diagnósticos
     name = fields.Char(string='Diagnóstico', required=True)
     descripcion = fields.Char(string='Descripción', required=True)
     diagnostico_ids = fields.One2many('clinica.diagnostico', 'd_nomenclado_id', string='Diagnósticos')
@@ -67,8 +65,6 @@ class Medico(models.Model):
     _description = 'Modelo para gestionar médicos'
 
     # Definir los campos para la gestión de médicos
-
     name = fields.Char(string='Nombre', required=True)
     matricula = fields.Char(string='Matrícula', required=True)
     diagnosticos_ids = fields.One2many('clinica.diagnostico', 'medico_id', string='Diagnósticos')
-

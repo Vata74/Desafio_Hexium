@@ -17,6 +17,7 @@
         </record>
 
         <!-- Vista para la lista de Diagnósticos -->
+        
         <record id="view_diagnostico_tree" model="ir.ui.view">
             <field name="name">Diagnóstico Tree</field>
             <field name="model">clinica.diagnostico</field>

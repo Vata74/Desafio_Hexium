@@ -19,12 +19,8 @@
     <field name="sequence" eval="1"/>
   </record>
 
-        <!-- Define la acción asociada al menú -->
-
-
   <menuitem id="menuitem_pacientes" name="Pacientes" parent="menu_clinica" sequence="10"/>
 
-  <!-- Menú desplegable con las funciones -->
   <menuitem id="menu_sub_pacientes" name="Funciones Pacientes" parent="menu_pacientes"/>
 
   <record id="menu_clinica" model="ir.ui.menu">
@@ -32,9 +28,6 @@
     <field name="sequence" eval="10"/>
     <field name="action" ref="menu_action_pacientes"/>
   </record>
-
-
-  <!-- Define las acciones -->
 
   <record id="ver_diagnosticos_pacientes" model="ir.actions.act_window">
     <field name="name">Diagnósticos</field>
@@ -44,12 +37,6 @@
   </record>
 
   <menuitem id="menu_action_buscar_pacientes_por_diagnostico" name="Buscar Pacientes por Diagnóstico" parent="menu_sub_pacientes" action="ver_diagnosticos_pacientes"/>
-
-
-
-
-
-  <menuitem id="menu_asociar_diagnostico_a_paciente" name="asociar" parent="menu_sub_pacientes" action="action_asociar_diagnostico_a_paciente"/>
 
   <!-- Comprobación médico -->
 

@@ -1,0 +1,2 @@
+name,apellido,tipo_documento,numero_documento,fecha_nacimiento,genero,direccion,ciudad,codigo_postal,telefono,diagnosticos_ids,acompanantes_ids
+Alan,Pérez,dni,123456789,1990-05-15,masculino,Calle 123,Buenos Aires,1000,+54123456789,Gripe,"Ana,Juan"

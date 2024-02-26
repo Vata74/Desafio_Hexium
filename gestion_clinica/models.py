@@ -50,6 +50,7 @@ class DiagnosticoNomenclado(models.Model):
     _name = "clinica.d_nomenclado"
     _description = 'Modelo para gestionar nomenclaturas de diagnósticos'
 
+    
     name = fields.Char(string='Diagnóstico', required=True)
     descripcion = fields.Char(string='Descripción', required=True)
     diagnostico_ids = fields.One2many('clinica.diagnostico', 'd_nomenclado_id', string='Diagnósticos')

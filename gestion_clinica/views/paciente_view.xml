@@ -34,7 +34,7 @@
                 <tree string="Pacientes">
                     <field name="name"/>
                     <field name="apellido"/>
-                    <field name="tipo_documento"/>
+                    <field name="tipo_documento" filter_domain="[('tipo_documento', '=', 'dni')]"/>
                     <field name="numero_documento"/>
                     <field name="fecha_nacimiento"/>
                     <field name="genero"/>

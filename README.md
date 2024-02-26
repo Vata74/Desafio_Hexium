@@ -9,7 +9,9 @@ Este README proporciona los pasos necesarios para instalar el módulo "Gestión 
 ## Pasos de Instalación
 
 1. **Descarga del Módulo:**
-   - Descargue el archivo comprimido del módulo desde el repositorio.
+   - Descargue el archivo comprimido `Modulo.zip` desde las releases del repositorio.
+
+        ![](Recursos/release.png)
 
 2. **Extracción del Archivo:**
    - Extraiga el contenido del archivo descargado.
